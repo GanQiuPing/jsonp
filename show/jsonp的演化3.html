@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button>获取</button>
+
+<script>
+ 
+  
+  //获取数据的地址
+  //获取到数据后，做什么事件
+  function jsonp(url, callback){
+  
+    var script = document.createElement("script");
+    
+    var fnName = "fn"+new Date().valueOf();
+    
+    //window.fn 定义全局的函数 赋值的值callback
+    window[fnName] = callback;
+    
+    script.src = url+"?callback="+fnName;
+    
+    document.body.appendChild(script);
+    
+  }
+  
+  var btn = document.querySelector("button");
+  btn.onclick = function () {
+    jsonp("http://www.api.com/data.php", function (data) {
+      console.log(data);
+    });
+  }
+  
+  
+</script>
+
+
+</body>
+</html>

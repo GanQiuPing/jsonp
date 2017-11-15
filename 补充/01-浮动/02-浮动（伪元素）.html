@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+  <style>
+    .father {
+      background-color: pink;
+    }
+
+
+    .clearfix::after {
+      /*伪元素：1. 必须写content属性  2. 行内元素*/
+      content: '';
+      clear: both;
+      display: block;
+      height: 0;
+      visibility: hidden;
+    }
+
+    .son {
+      background-color: blue;
+      width: 400px;
+      height: 400px;
+      float: left;
+    }
+    
+  </style>
+</head>
+<body>
+
+<div class="father clearfix">
+  <div class="son"></div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>Title</title>
+</head>
+<body>
+
+<button>获取</button>
+
+<script>
+  function func(data){
+    console.log(data);
+  }
+  
+  var btn = document.querySelector("button");
+  btn.onclick = function () {
+    var script = document.createElement("script");
+    script.src = 'http://www.api.com/data.php';
+    document.body.appendChild(script);
+  }
+  
+  
+</script>
+
+
+</body>
+</html>
